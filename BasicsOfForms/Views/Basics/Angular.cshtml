@@ -6,17 +6,17 @@
 <h2>Angular</h2>
 
 <div ng-controller="FormController">
-    <form ng-submit="formSubmit()" id="myForm">
+    <form ng-submit="formSubmit(user)" id="myForm">
         @Html.AntiForgeryToken()
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" ng-model="user.email"/>
 
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input type="password" name="password" id="password" ng-model="user.password"/>
 
-        <label for="passwordConfirmation">Password Confirmation</label>
-        <input type="password" name="passwordConfirmation" id="passwordConfirmation" />
+        <label for="passwordConfirm">Password Confirmation</label>
+        <input type="password" name="passwordConfirm" id="passwordConfirm" ng-model="user.passwordConfirm"/>
 
         <button type="submit">Submit!!</button>
     </form>
